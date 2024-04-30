@@ -30,6 +30,7 @@
         protontricks
         tgpt
         protonup-qt
+        obs-studio
         oneko
     ];
 
