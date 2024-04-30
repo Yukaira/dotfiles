@@ -3,13 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   # why the fuck does nix not come with grub
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
@@ -91,33 +85,24 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vlc
-  prismlauncher
-   (pkgs.discord.override {
-    # remove any overrides that you don't want
-    withOpenASAR = true;
-    withVencord = true;
-  })
-  krita
-  libsForQt5.kdeconnect-kde
-  jdk8
-  jdk17
-  opentabletdriver
-  osu-lazer
   appimage-run
-  gimp-with-plugins 
-  cura
-  blender
-  davinci-resolve
-  steam
-  protontricks
-  protonup-qt
-  git
-  neofetch  
-  oneko 
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
+  bat
+  tree
+  micro
   ];
+
+  #git
+  programs.git.enable = true;
+
+  #steam 
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
   #opentabletdriver
   hardware.opentabletdriver.enable = true;
