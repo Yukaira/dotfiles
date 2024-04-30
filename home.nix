@@ -28,6 +28,7 @@
         blender
         davinci-resolve
         protontricks
+        tgpt
         protonup-qt
         oneko
     ];
