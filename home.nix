@@ -16,6 +16,7 @@
         handbrake
         micro
         ani-cli
+        vesktop
         discord
         vlc
         prismlauncher
