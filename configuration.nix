@@ -25,7 +25,7 @@
 
   # hrngn im gonna flake
   nix.settings.experimental-features = [
-"nix-command"  "flakes" ];  
+  "nix-command"  "flakes" ];  
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -43,9 +43,6 @@
     layout = "us";
     xkbVariant = "";
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -85,19 +82,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  appimage-run
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  wget
+  appimage-run
   bat
-  tree
   micro
+  tree
+  wget
   ];
 
   #git
   programs.git.enable = true;
 
   #steam 
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

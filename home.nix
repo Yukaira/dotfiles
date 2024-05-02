@@ -10,33 +10,34 @@
 
     packages = with pkgs; [
         # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        neofetch
-        sl
-        tldr
-        handbrake
-        micro
         ani-cli
-        vesktop
+        blender
+        cura
+        davinci-resolve
         discord
-        vlc
-        prismlauncher
-        superTuxKart
-        superTux
         extremetuxracer
         gimp-with-plugins
-        python3
+        handbrake
         krita
         libsForQt5.kdeconnect-kde
-        opentabletdriver
-        osu-lazer
-        cura
-        blender
-        davinci-resolve
-        protontricks
-        tgpt
-        protonup-qt
+        micro
+        neofetch
         obs-studio
         oneko
+        opentabletdriver
+        osu-lazer
+        prismlauncher
+        protontricks
+        protonup-qt
+        python3
+        sl
+        superTux
+        superTuxKart
+        termdown
+        tgpt
+        tldr
+        vesktop
+        vlc
     ];
 
     # This value determines the Home Manager release that your configuration is
