@@ -51,4 +51,10 @@
   };
     nixpkgs.config.allowUnfreePredicate = _: true;
     programs.git.enable = true;
+
+
+   #enable zoxide 
+   programs.zoxide.enable = true;
+   programs.zoxide.enableBashIntegration = true;
+   programs.fzf.enable = true;
 }
