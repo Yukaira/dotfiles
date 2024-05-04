@@ -78,4 +78,32 @@
      history.path = "${config.xdg.dataHome}/zsh/history";
    };
 
+    # Environment
+    home.sessionVariables = {
+      EDITOR = "micro";
+      BROWSER = "firefox";
+      TERMINAL = "kitty";
+  };
+     # Configure kitty terminal
+    programs.kitty = {
+
+    # Enable kitty
+    enable = true;
+
+    #define kitty settings
+    settings = {
+     scrollback_lines = 10000;
+     enable_audio_bell = false;
+     update_check_interval = 0;
+     background_opacity = 0;
+    };
+
+    # Configure font
+    font = {
+      name = "FiraCode Nerd Font";
+      size = 12;
+    };
+
+  };
+ 
 }

@@ -69,7 +69,7 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "yukaira";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [
       firefox
       kate
