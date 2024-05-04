@@ -52,9 +52,30 @@
     nixpkgs.config.allowUnfreePredicate = _: true;
     programs.git.enable = true;
 
-
    #enable zoxide 
    programs.zoxide.enable = true;
    programs.zoxide.enableBashIntegration = true;
    programs.fzf.enable = true;
+
+   #enable zsh
+   programs.zsh = {
+     enable = true;
+     enableCompletion = true;
+     autosuggestion.enable = true;
+     syntaxHighlighting.enable = true;
+
+     oh-my-zsh = {
+         enable = true;
+         plugins = [ "git" "thefuck" ];
+         theme = "af-magic";
+       };
+ 
+     shellAliases = {
+       ll = "ls -l";
+       update = "sudo nixos-rebuild switch";
+     };
+     history.size = 10000;
+     history.path = "${config.xdg.dataHome}/zsh/history";
+   };
+
 }

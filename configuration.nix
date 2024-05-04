@@ -66,6 +66,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuka = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "yukaira";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -75,6 +76,9 @@
     #  thunderbird
     ];
   };
+
+  #enable zsh
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
