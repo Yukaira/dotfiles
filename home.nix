@@ -64,12 +64,6 @@
      autosuggestion.enable = true;
      syntaxHighlighting.enable = true;
 
-     oh-my-zsh = {
-         enable = true;
-         plugins = [ "git" "thefuck" ];
-         theme = "af-magic";
-       };
- 
      shellAliases = {
        ll = "ls -l";
        update = "sudo nixos-rebuild switch";
@@ -95,15 +89,41 @@
      scrollback_lines = 10000;
      enable_audio_bell = false;
      update_check_interval = 0;
-     background_opacity = 0;
+     background_opacity = "0.25";
+     dynamic_background_opacity = true; 
+     background_image_layout = "centered";
+     background_image = "~/xenia.png";
+     background_blur = 1;
     };
 
     # Configure font
     font = {
       name = "FiraCode Nerd Font";
-      size = 12;
+      size = 8;
     };
 
   };
- 
+    # Enable & Configure Starship
+    programs.starship =
+     let
+       flavour = "mocha"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
+     in
+     {
+       enable = true;
+       settings = {
+        PROMPT="%n@%m ❯";
+        RPROMPT="%X | %* | %W";
+         # Other config here
+         format = "$all"; # Remove this line to disable the default prompt format
+         palette = "catppuccin_${flavour}";
+       } // builtins.fromTOML (builtins.readFile
+         (pkgs.fetchFromGitHub
+           {
+             owner = "catppuccin";
+             repo = "starship";
+             rev = "5629d23"; # Replace with the latest commit hash
+             sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
+           } + /palettes/${flavour}.toml));
+     };
+
 }
