@@ -73,7 +73,6 @@
     packages = with pkgs; [
       firefox
       kate
-    #  thunderbird
     ];
   };
 
@@ -83,10 +82,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # System packages
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   appimage-run
   bat
   micro
@@ -94,17 +91,17 @@
   wget
   ];
 
-  #git
+  # Enable Git
   programs.git.enable = true;
 
-  #steam 
+  # Enable Steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
-  #opentabletdriver
+  # Enable Opentabletdriver
   hardware.opentabletdriver.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -120,7 +117,7 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # open ports KDE connect
+  # Open ports required for KDE Connect
   networking.firewall = { 
     enable = true;
     allowedTCPPortRanges = [ 
@@ -133,29 +130,23 @@
 
   programs.kdeconnect.enable = true; 
 
-  #but why did you buy an AMD gpu 
+  # but why did you buy an AMD gpu 
 
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  #AMDGPU openCL support 
+  # AMDGPU openCL support 
 
   hardware.opengl.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
 
-  #vulkan't
+  # vulkan't
 
   hardware.opengl.driSupport = true; # This is already enabled by default
   hardware.opengl.driSupport32Bit = true; # For 32 bit applications
  
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

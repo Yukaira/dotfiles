@@ -4,41 +4,40 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home = {
-    username = "yuka";
-    homeDirectory = "/home/yuka";
+    home = {
+      username = "yuka";
+      homeDirectory = "/home/yuka";
 
-    packages = with pkgs; [
-        # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        ani-cli
-        blender
-        cura
-        davinci-resolve
-        discord
-        extremetuxracer
-        gimp-with-plugins
-        handbrake
-        krita
-        libsForQt5.kdeconnect-kde
-        micro
-        neofetch
-        obs-studio
-        oneko
-        opentabletdriver
-        osu-lazer
-        prismlauncher
-        protontricks
-        protonup-qt
-        python3
-        sl
-        superTux
-        superTuxKart
-        termdown
-        tgpt
-        tldr
-        vesktop
-        vlc
-    ];
+      packages = with pkgs; [
+          ani-cli
+          blender
+          cura
+          davinci-resolve
+          discord
+          extremetuxracer
+          gimp-with-plugins
+          handbrake
+          krita
+          libsForQt5.kdeconnect-kde
+          micro
+          neofetch
+          obs-studio
+          oneko
+          opentabletdriver
+          osu-lazer
+          prismlauncher
+          protontricks
+          protonup-qt
+          python3
+          sl
+          superTux
+          superTuxKart
+          termdown
+          tgpt
+          tldr
+          vesktop
+          vlc
+      ];
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
@@ -52,39 +51,38 @@
     nixpkgs.config.allowUnfreePredicate = _: true;
     programs.git.enable = true;
 
-   #enable zoxide 
-   programs.zoxide.enable = true;
-   programs.zoxide.enableBashIntegration = true;
-   programs.fzf.enable = true;
+    # Enable Zoxide
+    programs.zoxide.enable = true;
+    programs.fzf.enable = true;
 
-   #enable zsh
-   programs.zsh = {
-     enable = true;
-     enableCompletion = true;
-     autosuggestion.enable = true;
-     syntaxHighlighting.enable = true;
+    # Enable Zsh
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
 
-     shellAliases = {
-       ll = "ls -l";
-       update = "sudo nixos-rebuild switch";
-     };
-     history.size = 10000;
-     history.path = "${config.xdg.dataHome}/zsh/history";
-   };
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+      };
+      history.size = 10000;
+      history.path = "${config.xdg.dataHome}/zsh/history";
+    };
 
-    # Environment
+    # Set environment variables
     home.sessionVariables = {
       EDITOR = "micro";
       BROWSER = "firefox";
       TERMINAL = "kitty";
   };
-     # Configure kitty terminal
+    # Configure kitty terminal
     programs.kitty = {
 
     # Enable kitty
     enable = true;
 
-    #define kitty settings
+    # Define kitty settings
     settings = {
      scrollback_lines = 10000;
      enable_audio_bell = false;
@@ -111,8 +109,6 @@
      {
        enable = true;
        settings = {
-        PROMPT="%n@%m ❯";
-        RPROMPT="%X | %* | %W";
          # Other config here
          format = "$all"; # Remove this line to disable the default prompt format
          palette = "catppuccin_${flavour}";
