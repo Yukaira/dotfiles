@@ -17,6 +17,7 @@
           extremetuxracer
           gimp-with-plugins
           handbrake
+          resumed
           krita
           libsForQt5.kdeconnect-kde
           micro
