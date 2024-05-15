@@ -19,7 +19,7 @@
           handbrake
           resumed
           krita
-          libsForQt5.kdeconnect-kde
+          kdePackages.kdeconnect-kde
           micro
           neofetch
           obs-studio
