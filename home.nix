@@ -23,6 +23,7 @@
           micro
           neofetch
           obs-studio
+          obsidian
           oneko
           opentabletdriver
           osu-lazer

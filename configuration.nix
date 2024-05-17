@@ -33,6 +33,20 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  # Define services, enable syncthing
+  services = {
+      syncthing = {
+          enable = true;
+          user = "myusername";
+          dataDir = "/home/myusername/Documents";    # Default folder for new synced folders
+          configDir = "/home/myusername/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+      };
+  };
+
+  services.syncthing.settings.gui = {
+      user = "username";
+      password = "password";
+  };   #TODO this could probably be done better
 
   # Enable Plasma6
   services.displayManager.sddm.enable = true;
@@ -118,7 +132,7 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Open ports required for KDE Connect
+  # Open ports required for syncthing and kde connect
   networking.firewall = { 
     enable = true;
     allowedTCPPortRanges = [ 
@@ -128,7 +142,11 @@
       { from = 1714; to = 1764; } # KDE Connect
     ];  
   };  
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
+  # Enable KDE connect
+ 
   programs.kdeconnect.enable = true; 
 
   # but why did you buy an AMD gpu 
