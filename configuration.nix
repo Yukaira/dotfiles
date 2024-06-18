@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }:
 {
-  # why the fuck does nix not come with grub
+  # Grub
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
@@ -15,10 +15,6 @@
 
   networking.hostName = "protogen-9"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -42,11 +38,6 @@
           configDir = "/home/myusername/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
       };
   };
-
-  services.syncthing.settings.gui = {
-      user = "username";
-      password = "password";
-  };   #TODO this could probably be done better
 
   # Enable Plasma6
   services.displayManager.sddm.enable = true;
