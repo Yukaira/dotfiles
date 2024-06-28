@@ -148,14 +148,10 @@
 
   # AMDGPU openCL support 
 
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
 
-  # vulkan't
-
-  hardware.opengl.driSupport = true; # This is already enabled by default
-  hardware.opengl.driSupport32Bit = true; # For 32 bit applications
  
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
