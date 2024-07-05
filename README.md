@@ -1,1 +1,1 @@
-personalized dotfiles for yukaira
+unprofessional dotfiles
