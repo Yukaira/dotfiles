@@ -11,7 +11,7 @@
       packages = with pkgs; [
           ani-cli
           blender
-          cura
+          #cura
           davinci-resolve
           discord
           extremetuxracer
