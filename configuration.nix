@@ -94,6 +94,7 @@
   micro
   tree
   wget
+  piper
   ];
 
   # Enable Git
@@ -150,6 +151,10 @@
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
+
+ 
+    # Enable ratbagd for piper
+    services.ratbagd.enable = true;
 
  
   # This value determines the NixOS release from which the default

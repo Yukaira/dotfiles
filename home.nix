@@ -28,6 +28,7 @@
           opentabletdriver
           osu-lazer
           prismlauncher
+          piper
           protontricks
           protonup-qt
           python3
@@ -98,9 +99,10 @@
 
     # Configure font
     font = {
-      name = "FiraCode Nerd Font";
+      name = "3270 Nerd Font";
       size = 8;
     };
+
 
   };
     # Enable & Configure Starship
