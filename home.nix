@@ -11,7 +11,7 @@
       packages = with pkgs; [
           ani-cli
           blender
-          #cura
+          #cura <- this is still broken!!!!! nixpkgs issue 325896
           davinci-resolve
           discord
           extremetuxracer
