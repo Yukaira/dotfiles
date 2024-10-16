@@ -10,6 +10,7 @@
 
       packages = with pkgs; [
           ani-cli
+          audacity
           blender
           #cura <- this is still broken!!!!! nixpkgs issue 325896
           davinci-resolve
@@ -40,6 +41,7 @@
           tldr
           vesktop
           vlc
+          yt-dlp
       ];
 
     # This value determines the Home Manager release that your configuration is
