@@ -16,6 +16,9 @@
   networking.hostName = "protogen-11"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # support for NTFS drives
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
