@@ -1,8 +1,8 @@
 {inputs, config, pkgs, ... }:
 
 {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+    # Let Home Manager install and manage itself.
+    programs.home-manager.enable = true;
 
     home = {
       username = "yuka";
@@ -12,7 +12,7 @@
           ani-cli
           audacity
           blender
-          #cura <- this is still broken!!!!! nixpkgs issue 325896
+          #cura
           davinci-resolve
           discord
           extremetuxracer
@@ -104,7 +104,6 @@
       name = "3270 Nerd Font";
       size = 8;
     };
-
 
   };
     # Enable & Configure Starship
