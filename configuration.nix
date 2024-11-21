@@ -13,7 +13,7 @@
     efiSupport = true;
   };
 
-  networking.hostName = "protogen-11"; # Define your hostname.
+  networking.hostName = "protogen-13"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # support for NTFS drives

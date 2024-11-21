@@ -16,7 +16,7 @@
         
   outputs = inputs: {
         
-    nixosConfigurations.protogen-11 = inputs.nixpkgs.lib.nixosSystem { 
+    nixosConfigurations.protogen-13 = inputs.nixpkgs.lib.nixosSystem {
         
       system = "x86_64-linux";
         
