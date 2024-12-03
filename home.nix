@@ -11,7 +11,7 @@
       packages = with pkgs; [
           ani-cli
           audacity
-          blender
+          blender-hip
           #cura
           davinci-resolve
           discord
