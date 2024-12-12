@@ -78,10 +78,6 @@
     isNormalUser = true;
     description = "yukaira";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [
-      firefox
-      kate
-    ];
   };
 
   #enable zsh

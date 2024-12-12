@@ -16,11 +16,13 @@
           davinci-resolve
           discord
           extremetuxracer
+          firefox
           gimp-with-plugins
           handbrake
           resumed
           krita
           kdePackages.kdeconnect-kde
+          kate
           micro
           neofetch
           obs-studio
