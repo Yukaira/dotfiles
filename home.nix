@@ -17,7 +17,7 @@
           discord
           extremetuxracer
           firefox
-          gimp-with-plugins
+          gimp#-with-plugins - with plugins wont build on this flake. not sure why
           handbrake
           resumed
           krita
@@ -27,7 +27,7 @@
           neofetch
           obs-studio
           obsidian
-          oneko
+          #oneko - broken
           opentabletdriver
           osu-lazer
           prismlauncher

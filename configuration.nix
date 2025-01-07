@@ -4,6 +4,7 @@
 
 { config, pkgs, ... }:
 {
+
   # Grub
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
@@ -54,7 +55,7 @@
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -77,12 +78,12 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "yukaira";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "adbusers" ];
     packages = with pkgs; [
     ];
   };
 
-  #enable zsh
+  # Enable zsh
   programs.zsh.enable = true;
 
   # Allow unfree packages
@@ -116,18 +117,13 @@
   # Enable Mullvad Service
   services.mullvad-vpn.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # Enable Bluetooth 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  # List services that you want to enable:
+  # Enable ADB 
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  programs.adb.enable = true; 
 
   # Open ports required for syncthing and kde connect
   networking.firewall = { 
@@ -159,8 +155,8 @@
   ];
 
  
-    # Enable ratbagd for piper
-    services.ratbagd.enable = true;
+  # Enable ratbagd for piper
+  services.ratbagd.enable = true;
 
  
   # This value determines the NixOS release from which the default
