@@ -18,6 +18,7 @@
           discord
           extremetuxracer
           firefox
+          ffmpeg
           gimp#-with-plugins - with plugins wont build on this flake. not sure why
           handbrake
           resumed
