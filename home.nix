@@ -10,6 +10,7 @@
 
       packages = with pkgs; [
           ani-cli
+          apktool
           audacity
           blender-hip
           #cura
@@ -26,6 +27,7 @@
           micro
           neofetch
           obs-studio
+          ghidra
           obsidian
           #oneko - broken
           opentabletdriver
