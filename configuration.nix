@@ -14,16 +14,13 @@
     efiSupport = true;
   };
 
-  networking.hostName = "protogen-13"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # support for NTFS drives
-  boot.supportedFilesystems = [ "ntfs" ];
-
-  # Enable networking
+  # Define hostname
+  networking.hostName = "protogen-13"; 
+  
+  # Enable networking.
   networking.networkmanager.enable = true;
 
-  # hrngn im gonna flake
+  # Enable Nix-command & Flakes
   nix.settings.experimental-features = [
   "nix-command"  "flakes" ];  
 
@@ -33,7 +30,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Define services, enable syncthing
+  # Define system services, enable syncthing, mullvad. 
   services = {
       syncthing = {
           enable = true;
@@ -41,14 +38,15 @@
           dataDir = "/home/myusername/Documents";    # Default folder for new synced folders
           configDir = "/home/myusername/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
       };
+      mullvad-vpn.enable = true;
   };
 
-  # Enable Plasma6
+  # Enable Plasma6 & SDDM.
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
    
-  # Configure keymap in X11
+  # Configure keymap in X11.
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
@@ -62,18 +60,9 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define user account.
   users.users.yuka = {
     shell = pkgs.zsh;
     isNormalUser = true;
@@ -83,13 +72,13 @@
     ];
   };
 
-  # Enable zsh
+  # Enable ZSH.
   programs.zsh.enable = true;
 
-  # Allow unfree packages
+  # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
-  # System packages
+  # Define system packages.
   environment.systemPackages = with pkgs; [
   appimage-run
   bat
@@ -100,10 +89,10 @@
   mullvad-vpn
   ];
 
-  # Enable Git
+  # Enable Git.
   programs.git.enable = true;
 
-  # Enable Steam
+  # Enable Steam.
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -114,15 +103,11 @@
   # Enable Opentabletdriver
   hardware.opentabletdriver.enable = true;
 
-  # Enable Mullvad Service
-  services.mullvad-vpn.enable = true;
-
   # Enable Bluetooth 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable ADB 
-
   programs.adb.enable = true; 
 
   # Open ports required for syncthing and kde connect
@@ -138,27 +123,22 @@
   networking.firewall.allowedTCPPorts = [ 8384 22000 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
-  # Enable KDE connect
- 
+  # Enable KDE connect 
   programs.kdeconnect.enable = true; 
 
-  # but why did you buy an AMD gpu 
-
+  # Enable AMDGPU  
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # AMDGPU openCL support 
-
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd
   ];
 
- 
   # Enable ratbagd for piper
   services.ratbagd.enable = true;
 
- 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

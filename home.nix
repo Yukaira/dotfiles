@@ -17,28 +17,28 @@
           davinci-resolve
           discord
           extremetuxracer
-          firefox
           ffmpeg
-          gimp#-with-plugins - with plugins wont build on this flake. not sure why
+          firefox
+          ghidra
+          gimp
           handbrake
-          resumed
-          krita
-          kdePackages.kdeconnect-kde
           kate
+          kdePackages.kdeconnect-kde
+          krita
           micro
           neofetch
           obs-studio
-          ghidra
           obsidian
-          #oneko - broken
+          oneko
           opentabletdriver
           osu-lazer
-          prismlauncher
-          piper
           picard
+          piper
+          prismlauncher
           protontricks
           protonup-qt
           python3
+          resumed
           sl
           superTux
           superTuxKart
