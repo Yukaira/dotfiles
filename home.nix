@@ -35,6 +35,7 @@
           osu-lazer
           prismlauncher
           piper
+          picard
           protontricks
           protonup-qt
           python3
