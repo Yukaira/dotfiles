@@ -87,6 +87,7 @@
   wget
   piper
   mullvad-vpn
+  rar
   ];
 
   # Enable Git.

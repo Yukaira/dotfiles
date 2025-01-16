@@ -17,6 +17,7 @@
           davinci-resolve
           discord
           extremetuxracer
+          fastfetch
           ffmpeg
           firefox
           ghidra
@@ -26,7 +27,6 @@
           kdePackages.kdeconnect-kde
           krita
           micro
-          neofetch
           obs-studio
           obsidian
           oneko
