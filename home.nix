@@ -20,7 +20,7 @@
           fastfetch
           ffmpeg
           firefox
-          ghidra
+          #ghidra - broken on current flake 
           gimp
           handbrake
           kate
