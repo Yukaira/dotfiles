@@ -16,6 +16,7 @@
           #cura
           davinci-resolve
           discord
+          digikam
           extremetuxracer
           fastfetch
           ffmpeg

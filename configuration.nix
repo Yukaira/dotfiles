@@ -122,8 +122,8 @@
       { from = 1714; to = 1764; } # KDE Connect
     ];  
   };  
-  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+  networking.firewall.allowedTCPPorts = [ 111 2049 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 111 2049 22000 21027 ];
 
   # Enable KDE connect 
   programs.kdeconnect.enable = true; 

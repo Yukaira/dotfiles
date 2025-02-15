@@ -24,6 +24,12 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+    fileSystems."/home/protogen-tiny" = {
+      device = "server:192.168.2.196";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto" ];
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/e097eb51-ec55-4d11-bd9e-a68684dc3210"; }
     ];
