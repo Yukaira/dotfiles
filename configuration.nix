@@ -40,6 +40,7 @@
           configDir = "/home/myusername/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
       };
       mullvad-vpn.enable = true;
+      rpcbind.enable = true; 
   };
 
   # Enable Plasma6 & SDDM.
@@ -89,6 +90,7 @@
   piper
   mullvad-vpn
   rar
+  nfs-utils
   ];
 
   # Enable Git.
@@ -112,7 +114,7 @@
   # Enable ADB 
   programs.adb.enable = true; 
 
-  # Open ports required for syncthing and kde connect
+  # Open ports
   networking.firewall = { 
     enable = true;
     allowedTCPPortRanges = [ 
@@ -129,7 +131,7 @@
   programs.kdeconnect.enable = true; 
 
   # Enable AMDGPU  
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = [ "amdgpu" "nfs" ];
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 

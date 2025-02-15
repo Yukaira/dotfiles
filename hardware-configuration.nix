@@ -9,7 +9,10 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd = {
+    supportedFilesystems = [ "nfs" ];
+    kernelModules = [ "nfs" ];
+  };
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -25,7 +28,7 @@
     };
 
     fileSystems."/home/protogen-tiny" = {
-      device = "server:192.168.2.196";
+      device = "192.168.2.196:/";
       fsType = "nfs";
       options = [ "x-systemd.automount" "noauto" ];
     };
