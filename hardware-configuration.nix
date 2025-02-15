@@ -27,10 +27,10 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-    fileSystems."/home/protogen-tiny" = {
-      device = "192.168.2.196:/";
+    fileSystems."/home/yuka/protogen-tiny" = {
+      device = "192.168.2.196:/mnt/yuri";
       fsType = "nfs";
-      options = [ "x-systemd.automount" "noauto" ];
+      options = [ "x-systemd.automount" "noauto" "nfsvers=3" ];
     };
 
   swapDevices =
