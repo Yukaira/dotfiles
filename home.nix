@@ -28,7 +28,11 @@
           kdePackages.kdeconnect-kde
           krita
           micro
-          obs-studio
+          (wrapOBS { 
+          	plugins = with obs-studio-plugins; [
+          		droidcam-obs
+          		];
+          	})
           obsidian
           oneko
           opentabletdriver
