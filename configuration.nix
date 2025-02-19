@@ -42,9 +42,9 @@
   services = {
       syncthing = {
           enable = true;
-          user = "myusername";
-          dataDir = "/home/myusername/Documents";    # Default folder for new synced folders
-          configDir = "/home/myusername/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
+          user = "yuka";
+          dataDir = "/home/yuka/Documents";    # Default folder for new synced folders
+          configDir = "/home/yuka/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
       };
       mullvad-vpn.enable = true;
       rpcbind.enable = true; 

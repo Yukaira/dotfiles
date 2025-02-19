@@ -1,0 +1,12 @@
+[0;1;31m×[0m syncthing.service - Syncthing service
+     Loaded: loaded (]8;;file://protogen-13/etc/systemd/system/syncthing.service\/etc/systemd/system/syncthing.service]8;;\; [0;1;32menabled[0m; preset: ignored)
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Wed 2025-02-19 18:42:17 EST; 5min ago
+   Duration: 3ms
+ Invocation: 5269f2f0cddb49a7a069f20f26a47e9a
+    Process: 134698 ExecStart=/nix/store/9a9c6l6j8l91p4mr85d08vfk79r4lpcj-syncthing-1.29.2/bin/syncthing -no-browser -gui-address=127.0.0.1:8384 -config=/home/myusername/Documents/.config/syncthing -data=/home/myusername/Documents/.config/syncthing [0;1;31m(code=exited, status=217/USER)[0m
+   Main PID: 134698 (code=exited, status=217/USER)
+
+Feb 19 18:42:17 protogen-13 systemd[1]: syncthing.service: Scheduled restart job, restart counter is at 5.
+Feb 19 18:42:17 protogen-13 systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185msyncthing.service: Start request repeated too quickly.[0m
+Feb 19 18:42:17 protogen-13 systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185msyncthing.service: Failed with result 'exit-code'.[0m
+Feb 19 18:42:17 protogen-13 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Syncthing service.[0m
