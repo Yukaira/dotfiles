@@ -98,6 +98,7 @@
   mullvad-vpn
   rar
   nfs-utils
+  pika-backup
   ];
 
   # Enable Git.

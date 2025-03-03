@@ -20,13 +20,13 @@
           extremetuxracer
           fastfetch
           ffmpeg
-          firefox
           ghidra
           gimp
           handbrake
-          kate
+          kdePackages.kate
           kdePackages.kdeconnect-kde
           krita
+          librewolf
           micro
           (wrapOBS { 
           	plugins = with obs-studio-plugins; [
@@ -44,6 +44,7 @@
           protonup-qt
           python3
           resumed
+          signal-desktop
           sl
           superTux
           superTuxKart
