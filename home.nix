@@ -20,13 +20,13 @@
           extremetuxracer
           fastfetch
           ffmpeg
+          firefox
           ghidra
           gimp
           handbrake
           kdePackages.kate
           kdePackages.kdeconnect-kde
           krita
-          librewolf
           micro
           (wrapOBS { 
           	plugins = with obs-studio-plugins; [
