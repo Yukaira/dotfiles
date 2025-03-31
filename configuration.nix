@@ -22,6 +22,7 @@
     efiSupport = true;
   };
 
+
   # Define hostname
   networking.hostName = "protogen-13"; 
   
