@@ -13,6 +13,7 @@
           apktool
           audacity
           blender-hip
+          bisq2
           #cura
           davinci-resolve
           discord
