@@ -119,25 +119,29 @@
     };
 
   };
-#    # Enable & Configure Starship
-#    programs.starship =
-#     let
-#       flavour = "mocha"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
-#     in
-#     {
-#       enable = true;
-#       settings = {
-#         # Other config here
-#        format = "$all"; # Remove this line to disable the default prompt format
-#         palette = "catppuccin_${flavour}";
-#       } // builtins.fromTOML (builtins.readFile
-#         (pkgs.fetchFromGitHub
-#           {
-#             owner = "catppuccin";
-#             repo = "starship";
-#            rev = "c41c89f"; # Replace with the latest commit hash
-#             sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
-#           } + /palettes/${flavour}.toml));
-#     };
+   programs.starship =
+     let
+       flavour = "mocha"; # latte | frappe | macchiato | mocha
+     in
+     {
+       enable = true;
+      settings =
+         {
+           format = "$hostname";
+           palette = "catppuccin_${flavour}";
+         }
+         // builtins.fromTOML (
+           builtins.readFile (
+             pkgs.fetchFromGitHub {
+               owner = "catppuccin";
+               repo = "starship";
+               rev = "0cf91419f9649e9a47bb5c85797e4b83ecefe45c";
+               sha256 = "sha256-4VuXKf6jFZlcAtSEfDtp8Mfot+81xHcylDmY+Ma8pcI=";
+               sparseCheckout = [ "themes" ];
+             }
+             + /themes/${flavour}.toml
+           )
+         );
+     };
 
 }
