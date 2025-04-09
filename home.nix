@@ -31,7 +31,7 @@
           micro
           (wrapOBS { 
           	plugins = with obs-studio-plugins; [
-          		#droidcam-obs - broken
+          		droidcam-obs
           		];
           	})
           obsidian
