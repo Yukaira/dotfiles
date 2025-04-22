@@ -17,7 +17,7 @@
           #cura
           davinci-resolve
           discord
-          digikam
+#         digikam
           extremetuxracer
           fastfetch
           ffmpeg
@@ -31,7 +31,7 @@
           micro
           (wrapOBS { 
           	plugins = with obs-studio-plugins; [
-          		droidcam-obs
+#          		droidcam-obs
           		];
           	})
           obsidian

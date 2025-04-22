@@ -100,6 +100,7 @@
   rar
   nfs-utils
   pika-backup
+  linux-wallpaperengine
   ];
 
   # Enable Git.
