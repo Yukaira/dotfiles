@@ -120,24 +120,58 @@
 
   };
     # Enable & Configure Starship
-    programs.starship =
-     let
-       flavour = "mocha"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
-     in
-     {
-       enable = true;
-       settings = {
-         # Other config here
-        format = "$all"; # Remove this line to disable the default prompt format
-         palette = "catppuccin_${flavour}";
-       } // builtins.fromTOML (builtins.readFile
-         (pkgs.fetchFromGitHub
-           {
-             owner = "catppuccin";
-             repo = "starship";
-            rev = "c41c89f"; # Replace with the latest commit hash
-             sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
-           } + /palettes/${flavour}.toml));
+   programs.starship.enable = true;
+   programs.starship.settings = {
+     add_newline = false;
+     format = "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+     shlvl = {
+       disabled = false;
+       symbol = "ﰬ";
+       style = "bright-red bold";
+     };
+     shell = {
+       disabled = false;
+       format = "$indicator";
+       fish_indicator = "";
+       bash_indicator = "[BASH](bright-white) ";
+       zsh_indicator = "[zsh](bright-purple) ";
+     };
+     username = {
+       style_user = "bright-white bold";
+       style_root = "bright-red bold";
+     };
+     hostname = {
+       style = "bright-green bold";
+       ssh_only = true;
+     };
+     nix_shell = {
+       symbol = "";
+       format = "[$symbol$name]($style) ";
+       style = "bright-purple bold";
+     };
+     git_commit = {
+       only_detached = true;
+       format = "[ﰖ$hash]($style) ";
+       style = "bright-yellow bold";
+     };
+     git_state = {
+       style = "bright-purple bold";
+     };
+     git_status = {
+       style = "bright-green bold";
+     };
+     directory = {
+       read_only = " ";
+       truncation_length = 0;
+     };
+     cmd_duration = {
+       format = "[$duration]($style) ";
+       style = "bright-blue";
+     };
+     jobs = {
+       style = "bright-green bold";
      };
 
+  };
+  
 }
