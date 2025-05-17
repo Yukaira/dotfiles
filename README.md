@@ -1,8 +1,26 @@
 unprofessional dotfiles
 
+***cheatsheet***
 
+refresh KDE icons when they disappear
+ 
+     sed -i 's/file:\/\/\/nix\/store\/[^\/]*\/share\/applications\//applications:/gi' \
+        ~/.config/plasma-org.kde.plasma.desktop-appletsrc \
+        && systemctl restart --user plasma-plasmashell
 
-(re) installation instructions
+*rebuilds*
+   
+   home-manager
+   
+      home-manager `home-manager switch --flake .
+   note that that must be run as your user, and you must be in the folder where your dotfiles are.
+   
+   nix rebuild
+
+      sudo nixos-rebuild switch --flake . 
+   note that you must be in the folder where your dotfiles are
+
+***(re) installation instructions***
    
   Clone the repository `git clone https://github.com/Yukaira/dotfiles`
 
