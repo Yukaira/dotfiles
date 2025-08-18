@@ -49,6 +49,7 @@
           sl
           superTux
           superTuxKart
+          srb2kart
           termdown
           tgpt
           tldr
