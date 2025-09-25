@@ -12,6 +12,7 @@
           ani-cli
           apktool
           audacity
+          audacious
           blender-hip
           bisq2
 #          cura
