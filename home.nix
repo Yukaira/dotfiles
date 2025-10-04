@@ -13,9 +13,9 @@
           apktool
           audacity
           audacious
+          bambu-studio
           blender-hip
           bisq2
-#          cura
           davinci-resolve
           discord
           digikam
