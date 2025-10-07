@@ -28,6 +28,7 @@
           handbrake
           kdePackages.kate
           kdePackages.kdeconnect-kde
+          kdePackages.kdenlive
           krita
           micro
           (wrapOBS { 
