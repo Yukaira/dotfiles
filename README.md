@@ -1,5 +1,7 @@
 unprofessional dotfiles
 
+you probably shouldnt use these to build your system, i'm extremely beginner in nixos and coding in general. 
+
 ***cheatsheet***
 
 refresh KDE icons when they disappear
