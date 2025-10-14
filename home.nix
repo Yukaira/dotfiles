@@ -13,7 +13,7 @@
           apktool
           audacity
           audacious
-          bambu-studio
+          #bambu-studio
           blender-hip
           bisq2
           davinci-resolve
@@ -51,7 +51,7 @@
           sl
           superTux
           superTuxKart
-          srb2kart
+          #srb2kart
           termdown
           tgpt
           tldr
@@ -97,6 +97,7 @@
       BROWSER = "firefox";
       TERMINAL = "kitty";
   };
+  
     # Configure kitty terminal
     programs.kitty = {
 

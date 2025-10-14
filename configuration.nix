@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+1# Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -102,6 +102,7 @@
   environment.systemPackages = with pkgs; [
   appimage-run
   bat
+  corectrl
   micro
   tree
   wget
@@ -114,7 +115,10 @@
   ];
 
   # Enable Git.
-  programs.git.enable = true;
+  programs.git = {
+  	enable = true;
+  	lfs.enable = true;
+  };
 
   # Enable Steam.
   programs.steam = {
