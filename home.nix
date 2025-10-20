@@ -26,6 +26,7 @@
           ghidra
           gimp
           handbrake
+          inkscape
           kdePackages.kate
           kdePackages.kdeconnect-kde
           kdePackages.kdenlive
