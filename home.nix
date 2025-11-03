@@ -54,6 +54,7 @@
           superTuxKart
           #srb2kart
           termdown
+          tor-browser-bundle-bin
           tgpt
           tldr
           vesktop
