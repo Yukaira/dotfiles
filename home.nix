@@ -13,7 +13,7 @@
           apktool
           audacity
           audacious
-          #bambu-studio
+          bambu-studio
           blender-hip
           bisq2
           davinci-resolve
