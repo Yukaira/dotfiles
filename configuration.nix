@@ -123,13 +123,26 @@
   nfs-utils
   pika-backup
   linux-wallpaperengine
+  (pkgs.wrapOBS {
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-vaapi #optional AMD hardware acceleration
+      obs-gstreamer
+      obs-vkcapture
+      droidcam-obs
+     ];
+  })
   ];
-
+  
   # Enable Git.
   programs.git = {
   	enable = true;
   	lfs.enable = true;
   };
+
+
 
   # Enable Steam.
   programs.steam = {
@@ -159,8 +172,8 @@
       { from = 1714; to = 1764; } # KDE Connect
     ];  
   };  
-  networking.firewall.allowedTCPPorts = [ 111 2049 8384 22000 ];
-  networking.firewall.allowedUDPPorts = [ 111 2049 22000 21027 ];
+  networking.firewall.allowedTCPPorts = [ 111 2049 8384 8080 22000 ];
+  networking.firewall.allowedUDPPorts = [ 111 2049 8080 22000 21027 ];
 
   # Enable KDE connect 
   programs.kdeconnect.enable = true; 

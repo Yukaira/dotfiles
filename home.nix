@@ -32,11 +32,11 @@
           kdePackages.kdenlive
           krita
           micro
-          (wrapOBS { 
-          	plugins = with obs-studio-plugins; [
-          		droidcam-obs
-          		];
-          	})
+#          (wrapOBS { 
+#          	plugins = with obs-studio-plugins; [
+#          		droidcam-obs
+#          		];
+#          	})
           obsidian
           oneko
           opentabletdriver
@@ -55,6 +55,7 @@
           #srb2kart
           termdown
           tor-browser
+          mixxx
           tgpt
           tldr
           vesktop
@@ -99,7 +100,8 @@
       BROWSER = "firefox";
       TERMINAL = "kitty";
   };
-  
+
+
     # Configure kitty terminal
     programs.kitty = {
 
