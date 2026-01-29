@@ -20,8 +20,29 @@
         
       system = "x86_64-linux";
         
-      modules = [ ./configuration.nix ./hardware-configuration.nix ];
-        
+      modules = [
+        ./configuration.nix
+        ./hardware-configuration.nix
+          ({ config, pkgs, ... }: {
+            nixpkgs.overlays = [
+              (final: prev: {
+                handbrake = prev.handbrake.overrideAttrs (oldAttrs: {
+                  passthru = oldAttrs.passthru // {
+                    ffmpeg-full = oldAttrs.passthru.ffmpeg-full.overrideAttrs (oldFFmpegAttrs: {
+                      patches = (oldFFmpegAttrs.patches or []) ++ [
+                        # Fixes https://github.com/NixOS/nixpkgs/issues/484121
+                        (final.fetchpatch2 {
+                          url = "https://git.ffmpeg.org/gitweb/ffmpeg.git/patch/d8ffec5bf9a2803f55cc0822a97b7815f24bee83";
+                          hash = "sha256-lmSI5arShb2/W84FMnSNs3lb6rd5vWdUSzfU8oza0Ic=";
+                        })
+                      ];
+                    });
+                  };
+                });
+              })
+            ];
+          })
+      ];
     };
 
 homeConfigurations."yuka" = inputs.home-manager.lib.homeManagerConfiguration {
