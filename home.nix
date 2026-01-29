@@ -22,6 +22,7 @@
           extremetuxracer
           fastfetch
           ffmpeg
+          scrcpy
           firefox
           ghidra
           gimp
