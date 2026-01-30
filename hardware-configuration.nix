@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
@@ -17,25 +18,26 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/53328f59-a050-46ce-96d2-05fbbc538cc4";
+    {
+      device = "/dev/disk/by-uuid/53328f59-a050-46ce-96d2-05fbbc538cc4";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/DCF8-E9CD";
+    {
+      device = "/dev/disk/by-uuid/DCF8-E9CD";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-#    fileSystems."/home/yuka/protogen-tiny" = {
-#      device = "192.168.2.196:/mnt/yuri";
-#      fsType = "nfs";
-#      options = [ "x-systemd.automount" "noauto" "nfsvers=3" ];
-#    };
+  #    fileSystems."/home/yuka/protogen-tiny" = {
+  #      device = "192.168.2.196:/mnt/yuri";
+  #      fsType = "nfs";
+  #      options = [ "x-systemd.automount" "noauto" "nfsvers=3" ];
+  #    };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/e097eb51-ec55-4d11-bd9e-a68684dc3210"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/e097eb51-ec55-4d11-bd9e-a68684dc3210"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

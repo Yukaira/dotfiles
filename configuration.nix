@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }:
 {
-	
+
   # Grub, use latest kernel
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -33,26 +33,30 @@
   ];
 
   # lix
-    nixpkgs.overlays = [ (final: prev: {
+  nixpkgs.overlays = [
+    (final: prev: {
       inherit (prev.lixPackageSets.stable)
         nixpkgs-review
         nix-eval-jobs
         nix-fast-build
         colmena;
-    }) ];
-  
-    nix.package = pkgs.lixPackageSets.stable.lix;
-  
+    })
+  ];
+
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
 
   # Define hostname
-  networking.hostName = "protogen-13"; 
-  
+  networking.hostName = "protogen-13";
+
   # Enable networking.
   networking.networkmanager.enable = true;
 
   # Enable Nix-command & Flakes
   nix.settings.experimental-features = [
-  "nix-command"  "flakes" ];  
+    "nix-command"
+    "flakes"
+  ];
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -62,21 +66,21 @@
 
   # Define system services, enable syncthing, mullvad. 
   services = {
-      syncthing = {
-          enable = true;
-          user = "yuka";
-          dataDir = "/home/yuka/Documents";    # Default folder for new synced folders
-          configDir = "/home/yuka/Documents/.config/syncthing";   # Folder for Syncthing's settings and keys
-      };
-      mullvad-vpn.enable = true;
-      rpcbind.enable = true; 
+    syncthing = {
+      enable = true;
+      user = "yuka";
+      dataDir = "/home/yuka/Documents"; # Default folder for new synced folders
+      configDir = "/home/yuka/Documents/.config/syncthing"; # Folder for Syncthing's settings and keys
+    };
+    mullvad-vpn.enable = true;
+    rpcbind.enable = true;
   };
 
   # Enable Plasma6 & SDDM.
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-   
+
   # Configure keymap in X11.
   services.xserver = {
     xkb.layout = "us";
@@ -111,35 +115,35 @@
 
   # Define system packages.
   environment.systemPackages = with pkgs; [
-  appimage-run
-  bat
-  corectrl
-  micro
-  tree
-  wget
-  piper
-  mullvad-vpn
-  rar
-  nfs-utils
-  pika-backup
-  linux-wallpaperengine
-  (pkgs.wrapOBS {
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-      obs-vaapi #optional AMD hardware acceleration
-      obs-gstreamer
-      obs-vkcapture
-      droidcam-obs
-     ];
-  })
+    appimage-run
+    bat
+    corectrl
+    micro
+    tree
+    wget
+    piper
+    mullvad-vpn
+    rar
+    nfs-utils
+    pika-backup
+    linux-wallpaperengine
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+        obs-vaapi #optional AMD hardware acceleration
+        obs-gstreamer
+        obs-vkcapture
+        droidcam-obs
+      ];
+    })
   ];
-  
+
   # Enable Git.
   programs.git = {
-  	enable = true;
-  	lfs.enable = true;
+    enable = true;
+    lfs.enable = true;
   };
 
 
@@ -160,23 +164,23 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable ADB 
-  programs.adb.enable = true; 
+  programs.adb.enable = true;
 
   # Open ports
-  networking.firewall = { 
+  networking.firewall = {
     enable = true;
-    allowedTCPPortRanges = [ 
+    allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
-    ];  
-    allowedUDPPortRanges = [ 
+    ];
+    allowedUDPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
-    ];  
-  };  
+    ];
+  };
   networking.firewall.allowedTCPPorts = [ 111 2049 8384 8080 22000 ];
   networking.firewall.allowedUDPPorts = [ 111 2049 8080 22000 21027 ];
 
   # Enable KDE connect 
-  programs.kdeconnect.enable = true; 
+  programs.kdeconnect.enable = true;
 
   # Enable AMDGPU  
   boot.initrd.kernelModules = [ "amdgpu" "nfs" ];
