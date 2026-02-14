@@ -45,6 +45,12 @@
 
   nix.package = pkgs.lixPackageSets.stable.lix;
 
+  # Fonts
+
+    fonts.packages = [
+      pkgs.departure-mono
+    ];
+ 
 
   # Define hostname
   networking.hostName = "protogen-13";
