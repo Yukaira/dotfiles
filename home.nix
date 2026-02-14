@@ -14,8 +14,8 @@
       audacity
       audacious
       bambu-studio
-      blender-hip
       bisq2
+      blender
       davinci-resolve
       discord
       digikam

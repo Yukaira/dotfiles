@@ -122,6 +122,7 @@
   # Define system packages.
   environment.systemPackages = with pkgs; [
     appimage-run
+    android-tools
     bat
     corectrl
     micro
@@ -168,9 +169,6 @@
   # Enable Bluetooth 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-
-  # Enable ADB 
-  programs.adb.enable = true;
 
   # Open ports
   networking.firewall = {
