@@ -133,6 +133,7 @@
     rar
     nfs-utils
     pika-backup
+    pavucontrol
     linux-wallpaperengine
     (pkgs.wrapOBS {
       plugins = with pkgs.obs-studio-plugins; [
