@@ -32,7 +32,7 @@
   fileSystems."/home/yuka/nfs" =
     {
       device = "192.168.2.190:/mnt/eighttb/";
-      fsType = "nfs";
+      fsType = "cifs";
       options = [ "x-systemd.automount" "noauto"];
     };
 
