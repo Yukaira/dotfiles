@@ -29,6 +29,12 @@
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
+  fileSystems."/home/yuka/nfs" =
+    {
+      device = "192.168.2.190:/mnt/eighttb/";
+      fsType = "nfs";
+      options = [ "x-systemd.automount" "noauto"];
+    };
 
   #    fileSystems."/home/yuka/protogen-tiny" = {
   #      device = "192.168.2.196:/mnt/yuri";
