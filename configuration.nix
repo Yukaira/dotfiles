@@ -130,6 +130,7 @@
     micro
     tree
     wget
+    gparted
     piper
     mullvad-vpn
     rar
