@@ -28,6 +28,7 @@
       gimp
       handbrake
       inkscape
+      kdePackages.kcalc
       kdePackages.kate
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
