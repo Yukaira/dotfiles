@@ -58,8 +58,17 @@
   networking.hostName = "protogen-13";
 
   # Enable networking.
+  networking.wireless.iwd.enable = true;
   networking.networkmanager.enable = true;
-
+  networking.networkmanager.wifi.backend = "iwd";
+  networking.wireless.iwd.settings = {
+    Network = {
+      EnableIPv6 = true;
+    };
+    Settings = {
+      AutoConnect = true;
+    };
+   };
   # Enable Nix-command & Flakes
   nix.settings.experimental-features = [
     "nix-command"
@@ -127,6 +136,7 @@
     android-tools
     bat
     corectrl
+    linuxKernel.packages.linux_7_1.rtw88
     micro
     tree
     wget
@@ -165,6 +175,10 @@
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+    
   };
 
   # Enable Opentabletdriver

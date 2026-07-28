@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+	{ inputs, config, pkgs, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -49,6 +49,7 @@
       protontricks
       protonup-qt
       python3
+      qmmp
       resumed
       signal-desktop
       sl
