@@ -34,11 +34,12 @@
       kdePackages.kdenlive
       krita
       micro
-      #          (wrapOBS { 
-      #          	plugins = with obs-studio-plugins; [
-      #          		droidcam-obs
-      #          		];
-      #          	})
+               (wrapOBS { 
+               	plugins = with obs-studio-plugins; [
+               		droidcam-obs
+               		input-overlay
+               		];
+               	})
       obsidian
       oneko
       opentabletdriver
