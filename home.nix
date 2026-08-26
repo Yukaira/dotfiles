@@ -56,7 +56,7 @@
       sl
       superTux
       superTuxKart
-      #srb2kart
+      srb2kart
       termdown
       tor-browser
       mixxx
