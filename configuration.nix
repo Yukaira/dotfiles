@@ -58,17 +58,9 @@
   networking.hostName = "protogen-13";
 
   # Enable networking.
-  networking.wireless.iwd.enable = true;
+  
   networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
-  networking.wireless.iwd.settings = {
-    Network = {
-      EnableIPv6 = true;
-    };
-    Settings = {
-      AutoConnect = true;
-    };
-   };
+  
   # Enable Nix-command & Flakes
   nix.settings.experimental-features = [
     "nix-command"
