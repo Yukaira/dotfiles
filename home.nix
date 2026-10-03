@@ -58,6 +58,7 @@
       superTuxKart
       srb2kart
       termdown
+      telegram-desktop
       tor-browser
       mixxx
       tgpt
